@@ -1,12 +1,12 @@
-rm(list = ls(all = TRUE))
-
-library(forcats)
-library(dplyr)
 ###Reproduces Manuscript Figure 5
 
-library(lme4)
-library(sjPlot)
-library(ggplot2)
+rm(list = ls(all = TRUE))
+
+library(forcats)  ###Version 1.0.0
+library(dplyr)    ###Version 1.1.4
+library(lme4)     ###Version 1.1-37
+library(sjPlot)   ###Version 2.9.0
+library(ggplot2)  ###Version 3.5.1
 
 
 ######Load in data from your local machine
@@ -333,6 +333,7 @@ ggplot() +
   coord_flip()+ geom_hline(yintercept = 0, color = "grey57", linetype = "dashed")
 
 ggsave('Barrriers_Model_Types.tif',  plot = last_plot(), dpi=300, height=5, width=5.5, units='in')
+
 
 
 
