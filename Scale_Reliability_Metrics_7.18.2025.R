@@ -2,8 +2,8 @@
 
 rm(list=ls())
 
-library(dplyr)
-library(psych)
+library(dplyr)   ###Version 1.1.4
+library(psych)   ###Version 2.5.3
 
 ######Load in data from your local machine
 Data<-read.csv("C:/Users/tfrawley/Desktop/OPC_Analysis/Survey_Data_For_Analysis_7.17.2025.csv")
@@ -183,3 +183,4 @@ BData<- BData %>%
   mutate(PEB_Index = rowMeans(likert_questions, na.rm = TRUE))
 mean(BData$PEB_Index)
 sd(BData$PEB_Index)
+
