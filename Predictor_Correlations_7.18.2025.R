@@ -1,9 +1,10 @@
 ###Reproduces Manuscript Figure 3
 
+rm(list = ls(all = TRUE))
 
-library(stringr)
-library(ggplot2)
-library(ggcorrplot)
+library(stringr)      ###Version 1.5.1
+library(ggplot2)      ###Version 3.5.1
+library(ggcorrplot)   ###Version 0.1.4.1
 
 ###Load in data from your local machine
 Data<-read.csv("C:/Users/tfrawley/Desktop/OPC_Analysis/Survey_Data_For_Analysis_7.18.2025.csv")
@@ -75,6 +76,7 @@ ggcorrplot(corr, type="lower",
     limits = c(-0.5, 0.5))
 
 ggsave('Predictor_Correlations.png',  plot = last_plot(), dpi=300, height=5, width=7.5, units='in')
+
 
 
 
