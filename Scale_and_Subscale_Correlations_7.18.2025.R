@@ -2,9 +2,9 @@
 
 rm(list = ls(all = TRUE))
 
-library(dplyr)
-library(pheatmap)
-library(rstaix)
+library(dplyr)        ###Version 1.1.4
+library(pheatmap)     ###Version 1.0.12
+library(rstaix)       ###Version 0.7.2
 
 ###Load in data from your local machine
 Data<-read.csv("C:/Users/tfrawley/Desktop/OPC_Analysis/Survey_Data_For_Analysis_7.18.2025.csv")
@@ -96,5 +96,6 @@ Label[Y > .01]<-" "
 pheatmap(X,
          display_numbers=Label,
          cluster_cols=TRUE)
+
 
 
