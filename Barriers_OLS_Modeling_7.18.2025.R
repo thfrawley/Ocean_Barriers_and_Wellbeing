@@ -10,7 +10,7 @@ library(ggplot2)    ###Version 3.5.1
 
 
 ######Load in data from your local machine
-Data<-read.csv("C:/Users/tfrawley/Desktop/OPC_Analysis/Survey_Data_For_Analysis_7.18.2025.csv")
+Data<-read.csv("C:/Users/tfrawley/Desktop/OPC_Analysis/Survey_Data_For_Analysis_12.19.2025.csv")
 Data<-Data%>% mutate_at(vars('Q13._1', 'Q13._2', 'Q13._3', 'Q13._4', 'Q13._5', 'Q13._6', 'Q13._7', 'Q13._8', 'Q13._9'), as.numeric)
 
 ###Retain only variables of interest
@@ -367,6 +367,7 @@ ggplot() +
   coord_flip()+ geom_hline(yintercept = 0, color = "grey57", linetype = "dashed")
  
 ggsave('Barrriers_Model_Types.tif',  plot = last_plot(), dpi=300, height=5, width=6, units='in')
+
 
 
 
