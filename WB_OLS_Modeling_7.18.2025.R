@@ -60,7 +60,7 @@ Model_6<-lm(WB_Index~EJ_Bin+White+Asian+Black+Pacific_Islander+Native+Latino + A
 AIC(Model_4, Model_6)
 
 Model_6<-lm(WB_Index~EJ_Bin+White+Asian+Black+Pacific_Islander+Native+Latino + Area, data= Data_Subset)
-Model_7<-lm(WB_Index~EJ_Bin+White+Asian+Black+Pacific_Islander+Native+Latino +Area+ Male+NB, data= Data_Subset)
+Model_7<-lm(WB_Index~EJ_Bin+White+Asian+Black+Pacific_Islander+Native+Latino +Area+ Female+NB, data= Data_Subset)
 AIC(Model_6, Model_7)
 
 Model_6<-lm(WB_Index~EJ_Bin+White+Asian+Black+Pacific_Islander+Native+Latino + Area, data= Data_Subset)
@@ -87,7 +87,7 @@ X$Significance<- model_summary$coefficients[, "Pr(>|t|)"]
 X$Significance<-ifelse(X$Significance < 0.05, "Yes", "No")
 X$Variable<-row.names(X)
 X <- X[-1, ]
-new_row1 <- data.frame(NA,NA,NA,"Male")
+new_row1 <- data.frame(NA,NA,NA,"Female")
 names(new_row1)<-colnames(X)
 new_row2 <- data.frame(NA,NA,NA,"NB")
 names(new_row2)<-colnames(X)
@@ -96,7 +96,7 @@ names(new_row3)<-colnames(X)
 X<-rbind(X, new_row1)
 X<-rbind(X, new_row2)
 
-X$Variable <- factor(X$Variable, levels = c("Distance", "AreaNorth", "AreaSouth",  "Male", "NB", "Asian", "Black", 'Latino', "Native" ,"Pacific_Islander", "White", "EJ_Bin", "Income"))
+X$Variable <- factor(X$Variable, levels = c("Distance", "AreaNorth", "AreaSouth",  "Female", "NB", "Asian", "Black", 'Latino', "Native" ,"Pacific_Islander", "White", "EJ_Bin", "Income"))
 levels(X$Variable)[levels(X$Variable) == "NB"] <- "Trans or Non-Binary"
 levels(X$Variable)[levels(X$Variable) == "Pacific_Islander"] <- "Pacific Islander"
 levels(X$Variable)[levels(X$Variable) == "Income"] <- "HH Income"
@@ -139,8 +139,8 @@ Model_3<-lm(MWB_Index~EJ_Bin*Income, data= Data_Subset)
 Model_4<-lm(MWB_Index~EJ_Bin+White+Asian+Black+Pacific_Islander+Native+Latino, data= Data_Subset)
 Model_5<-lmer(MWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + (1|Area), data= Data_Subset)
 Model_6<-lm(MWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Area, data= Data_Subset)
-Model_7<-lm(MWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Area + Male + NB, data= Data_Subset)
-Model_8<-lm(MWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Area + Male + NB + Distance, data= Data_Subset)
+Model_7<-lm(MWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Area + Female + NB, data= Data_Subset)
+Model_8<-lm(MWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Area + Female + NB + Distance, data= Data_Subset)
 
 
 AIC(Model_0, Model_1, Model_2, Model_3, Model_4, Model_5, Model_6, Model_7, Model_8)
@@ -165,7 +165,7 @@ new_row1 <- data.frame(NA,NA,NA,"Income")
 names(new_row1)<-colnames(X)
 
 
-X$Variable <- factor(X$Variable, levels = c("Distance", "AreaNorth", "AreaSouth",  "Male", "NB", "Asian", "Black", 'Latino', "Native" ,"Pacific_Islander", "White", "EJ_Bin", "Income"))
+X$Variable <- factor(X$Variable, levels = c("Distance", "AreaNorth", "AreaSouth",  "Female", "NB", "Asian", "Black", 'Latino', "Native" ,"Pacific_Islander", "White", "EJ_Bin", "Income"))
 levels(X$Variable)[levels(X$Variable) == "NB"] <- "Trans or Non-Binary"
 levels(X$Variable)[levels(X$Variable) == "Pacific_Islander"] <- "Pacific Islander"
 levels(X$Variable)[levels(X$Variable) == "Income"] <- "HH Income"
@@ -200,7 +200,7 @@ Model_3<-lm(SWB_Index~EJ_Bin*Income, data= Data_Subset)
 Model_4<-lm(SWB_Index~EJ_Bin+White+Asian+Black+Pacific_Islander+Native+Latino, data= Data_Subset)
 Model_5<-lmer(SWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + (1|Area), data= Data_Subset)
 Model_6<-lm(SWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Area, data= Data_Subset)
-Model_7<-lm(SWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin +Male + NB, data= Data_Subset)
+Model_7<-lm(SWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Female + NB, data= Data_Subset)
 Model_8<-lm(SWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Distance, data= Data_Subset)
 
 AIC(Model_0, Model_1, Model_2, Model_3, Model_4, Model_5, Model_6, Model_7, Model_8)
@@ -220,7 +220,7 @@ X$Significance<- model_summary$coefficients[, "Pr(>|t|)"]
 X$Significance<-ifelse(X$Significance < 0.05, "Yes", "No")
 X$Variable<-row.names(X)
 X <- X[-1, ]
-new_row1 <- data.frame(NA,NA,NA,"Male")
+new_row1 <- data.frame(NA,NA,NA,"Female")
 names(new_row1)<-colnames(X)
 new_row2 <- data.frame(NA,NA,NA,"NB")
 names(new_row2)<-colnames(X)
@@ -237,7 +237,7 @@ X<-rbind(X, new_row4)
 X<-rbind(X, new_row5)
 
 
-X$Variable <- factor(X$Variable, levels = c("Distance", "AreaNorth", "AreaSouth",  "Male", "NB", "Asian", "Black", 'Latino', "Native" ,"Pacific_Islander", "White", "EJ_Bin", "Income"))
+X$Variable <- factor(X$Variable, levels = c("Distance", "AreaNorth", "AreaSouth",  "Female", "NB", "Asian", "Black", 'Latino', "Native" ,"Pacific_Islander", "White", "EJ_Bin", "Income"))
 levels(X$Variable)[levels(X$Variable) == "NB"] <- "Trans or Non-Binary"
 levels(X$Variable)[levels(X$Variable) == "Pacific_Islander"] <- "Pacific Islander"
 levels(X$Variable)[levels(X$Variable) == "Income"] <- "HH Income"
@@ -270,7 +270,7 @@ Model_3<-lm(RWB_Index~EJ_Bin*Income, data= Data_Subset)
 Model_4<-lm(RWB_Index~EJ_Bin+White+Asian+Black+Pacific_Islander+Native+Latino, data= Data_Subset)
 Model_5<-lmer(RWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + (1|Area), data= Data_Subset)
 Model_6<-lm(RWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Area, data= Data_Subset)
-Model_7<-lm(RWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin +Male + NB, data= Data_Subset)
+Model_7<-lm(RWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Female + NB, data= Data_Subset)
 Model_8<-lm(RWB_Index~White+Asian+Black+Pacific_Islander+Native+Latino + EJ_Bin + Distance, data= Data_Subset)
 
 AIC(Model_0, Model_1, Model_2, Model_3, Model_4, Model_6, Model_7, Model_8)
@@ -290,7 +290,7 @@ X$Significance<- model_summary$coefficients[, "Pr(>|t|)"]
 X$Significance<-ifelse(X$Significance < 0.05, "Yes", "No")
 X$Variable<-row.names(X)
 X <- X[-1, ]
-new_row1 <- data.frame(NA,NA,NA,"Male")
+new_row1 <- data.frame(NA,NA,NA,"Female")
 names(new_row1)<-colnames(X)
 new_row2 <- data.frame(NA,NA,NA,"NB")
 names(new_row2)<-colnames(X)
@@ -307,7 +307,7 @@ X<-rbind(X, new_row4)
 X<-rbind(X, new_row5)
 
 
-X$Variable <- factor(X$Variable, levels = c("Distance", "AreaNorth", "AreaSouth",  "Male", "NB", "Asian", "Black", 'Latino', "Native" ,"Pacific_Islander", "White", "EJ_Bin", "Income"))
+X$Variable <- factor(X$Variable, levels = c("Distance", "AreaNorth", "AreaSouth",  "Female", "NB", "Asian", "Black", 'Latino', "Native" ,"Pacific_Islander", "White", "EJ_Bin", "Income"))
 levels(X$Variable)[levels(X$Variable) == "NB"] <- "Trans or Non-Binary"
 levels(X$Variable)[levels(X$Variable) == "Pacific_Islander"] <- "Pacific Islander"
 levels(X$Variable)[levels(X$Variable) == "Income"] <- "HH Income"
