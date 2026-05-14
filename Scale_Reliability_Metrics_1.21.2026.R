@@ -22,7 +22,7 @@ WBData<-WBData[complete.cases(WBData),]
 likert_questions <- WBData %>% dplyr::select(1:9)
 
 ###Find Cronbach's aplha for complete scale
-cronbach.alpha(likert_questions)
+psych::alpha(likert_questions)
 
 ###Find McDonald's omega for complete scale
 omega_result<-psych::omega(likert_questions)
@@ -39,9 +39,9 @@ alpha_result_complete$item.stats
 material_likert_questions <- WBData %>% dplyr::select(1,2,6,7)
 
 ###Find Cronbach's aplha 
-cronbach.alpha(material_likert_questions)
+psych::alpha(material_likert_questions)
 ###Find McDonald's omega for complete scale
-omega_result<-psych::omega(material_likert_questions)
+omega_result<-psych::omega(material_likert_questions, nfactors=1)
 print(omega_result)
 ##Find mean score, sd score, and item-total correlation (raw.r) values
 alpha_result<-psych::alpha(material_likert_questions)
@@ -58,9 +58,9 @@ sd(WBData$MWB_Index)
 subjective_likert_questions <- WBData %>% dplyr::select(6,7,8,9)
 
 ###Find Cronbach's aplha for complete scale
-cronbach.alpha(subjective_likert_questions)
+psych::alpha(subjective_likert_questions)
 ###Find McDonald's omega for complete scale
-omega_result<-psych::omega(subjective_likert_questions)
+omega_result<-psych::omega(subjective_likert_questions, nfactors=1)
 print(omega_result)
 ##Find mean score, sd score, and item-total correlation (raw.r) values
 alpha_result<-psych::alpha(subjective_likert_questions)
@@ -78,9 +78,9 @@ sd(WBData$SWB_Index)
 relational_likert_questions <- WBData %>% dplyr::select(3,4,5)
 
 ###Find Cronbach's aplha for complete scale
-cronbach.alpha(relational_likert_questions)
+psych::alpha(relational_likert_questions)
 ###Find McDonald's omega for complete scale
-omega_result<-psych::omega(relational_likert_questions)
+omega_result<-psych::omega(relational_likert_questions, nfactors=1)
 print(omega_result)
 ##Find mean score, sd score, and item-total correlation (raw.r) values
 alpha_result<-psych::alpha(relational_likert_questions)
@@ -151,7 +151,7 @@ BData<-BData[complete.cases(BData),]
 likert_questions <- BData %>% dplyr::select(1:9)
 
 ###Find Cronbach's aplha for complete scale
-cronbach.alpha(likert_questions)
+psych::alpha(likert_questions)
 
 ###Find McDonald's omega for complete scale
 omega_result<-psych::omega(likert_questions)
@@ -166,9 +166,9 @@ alpha_result_complete$item.stats
 likert_questions <- BData %>% dplyr::select(1,3,6)
 
 ###Find Cronbach's aplha for complete scale
-cronbach.alpha(likert_questions)
+psych::alpha(likert_questions)
 ###Find McDonald's omega for complete scale
-omega_result<-psych::omega(likert_questions)
+omega_result<-psych::omega(likert_questions, nfactors=1)
 print(omega_result)
 ##Find mean score, sd score, and item-total correlation (raw.r) values
 alpha_result<-psych::alpha(likert_questions)
@@ -186,9 +186,9 @@ sd(BData$PB_Index)
 social_likert_questions <- BData %>% dplyr::select(1,2,9)
 
 ###Find Cronbach's aplha for complete scale
-cronbach.alpha(social_likert_questions)
+psych::alpha(social_likert_questions)
 ###Find McDonald's omega for complete scale
-omega_result<-psych::omega(social_likert_questions)
+omega_result<-psych::omega(social_likert_questions, nfactors=1)
 print(omega_result)
 ##Find mean score, sd score, and item-total correlation (raw.r) values
 alpha_result<-psych::alpha(social_likert_questions)
@@ -205,9 +205,9 @@ sd(BData$SB_Index)
 knowledge_likert_questions <- BData %>% dplyr::select(5,7,8)
 
 ###Find Cronbach's aplha for complete scale
-cronbach.alpha(knowledge_likert_questions)
+psych::alpha(knowledge_likert_questions)
 ###Find McDonald's omega for complete scale
-omega_result<-psych::omega(knowledge_likert_questions)
+omega_result<-psych::omega(knowledge_likert_questions, nfactors=1)
 print(omega_result)
 ##Find mean score, sd score, and item-total correlation (raw.r) values
 alpha_result<-psych::alpha(knowledge_likert_questions)
@@ -224,9 +224,9 @@ sd(BData$KB_Index)
 pe_likert_questions <- BData %>% dplyr::select(3,4,7)
 
 ###Find Cronbach's aplha for complete scale
-cronbach.alpha(pe_likert_questions)
+psych::alpha(pe_likert_questions)
 ###Find McDonald's omega for complete scale
-omega_result<-psych::omega(pe_likert_questions)
+omega_result<-psych::omega(pe_likert_questions, nfactors=1)
 print(omega_result)
 ##Find mean score, sd score, and item-total correlation (raw.r) values
 alpha_result<-psych::alpha(pe_likert_questions)
