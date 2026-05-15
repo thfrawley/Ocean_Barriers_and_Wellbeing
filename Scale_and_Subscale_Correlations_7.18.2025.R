@@ -1,4 +1,4 @@
-###Reproduces Figure 6 and Supplemental Figure 5
+###Reproduces Figure 8 and Supplemental Figure 8
 
 rm(list = ls(all = TRUE))
 
