@@ -1,4 +1,4 @@
-###Reproduces Manuscript Figure 4
+###Reproduces Manuscript Figure 5
 
 rm(list = ls(all = TRUE))
 
