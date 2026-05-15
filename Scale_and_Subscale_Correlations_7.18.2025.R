@@ -4,7 +4,7 @@ rm(list = ls(all = TRUE))
 
 library(dplyr)        ###Version 1.1.4
 library(pheatmap)     ###Version 1.0.12
-library(rstaix)       ###Version 0.7.2
+library(rstatix)       ###Version 0.7.2
 
 ###Load in data from your local machine
 Data<-read.csv("C:/Users/tfrawley/Desktop/OPC_Analysis/Survey_Data_For_Analysis_12.19.2025.csv")
